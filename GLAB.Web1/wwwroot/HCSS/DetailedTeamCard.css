@@ -1,0 +1,222 @@
+@keyframes expandTeamCard{
+    from{
+        width: 14rem;
+        height: 20rem;
+    }
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+    }
+}
+
+@keyframes minimizeTeamCard{
+    from{
+       
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+    }
+    to{
+        width: 14rem;
+        height: 20rem;
+    }
+}
+
+.detailedTeamCardExpanded{
+    animation: expandTeamCard 450ms ease-in-out forwards;
+    z-index: 1000;
+    position: absolute;
+    
+}
+
+.detailedTeamCardMinimized{
+    z-index: 1000;
+    position: absolute;
+    animation: minimizeTeamCard 450ms ease-in-out forwards; 
+}
+
+@keyframes animateBanner {
+    from{
+        
+    }
+    to{
+        height: 100%;
+    }
+}
+
+@keyframes animateTeamName {
+   from{
+       font-size: initial;
+   } 
+    to{
+        font-size: clamp(3rem,5vw,6rem);
+    }
+}
+
+@keyframes animateTeamAcronym {
+    from{
+        font-size: initial;
+    }
+    to{
+        font-size: clamp(1rem,4vw,2.5rem);
+    }
+}
+
+@keyframes animateTeamLeaderName {
+    from{
+        font-size: initial;
+    }
+    to{
+        font-size: clamp(1.5rem,2vw,3rem);
+    }
+}
+
+.detailedTeamCardMinimized .teamCardContainer:before{
+    animation: animateBanner 300ms ease-in-out forwards !important;
+}
+
+.expandedTeamInfoContainer{
+    
+}
+.expandedTeamInfoContainer .teamName{
+    animation: animateTeamName 300ms ease-in-out forwards !important;
+
+}
+.expandedTeamInfoContainer .teamAcronym{
+    animation: animateTeamAcronym 300ms ease-in-out forwards !important;
+}
+
+.expandedTeamLeaderContainer{
+    justify-self: start!important;
+    align-self: end !important;
+    bottom: 1rem !important;
+    margin-top: 10vh;
+    margin-left: 1rem;
+    grid-template-rows: repeat(3,1fr) !important;
+    grid-template-columns: 7rem auto !important;
+    grid-column-gap: 3rem !important;
+    justify-content: start !important;
+    width: 100% !important;
+    height: 100%;
+    grid-column: 1 !important;
+}
+
+.expandedTeamLeaderContainer .teamLeaderName{
+    animation: animateTeamLeaderName 300ms ease-in-out forwards !important;
+    min-font-size: 2rem;
+    grid-row: 1;
+    font-weight: normal;
+}
+
+.expandedTeamLeaderContainer .teamLeaderLastName{
+    animation: animateTeamLeaderName 300ms ease-in-out forwards !important;
+    min-font-size: 2rem;
+    grid-row: 2;
+    font-weight: normal;
+}
+.expandedTeamLeaderContainer .teamLeaderRole{
+    animation: animateTeamLeaderName 300ms ease-in-out forwards !important;
+    min-font-size: 2rem;
+    grid-row: 3;
+    font-weight: normal;
+}
+
+.expandedTeamLeaderContainer .teamLeaderPicContainer{
+    width: 6rem;
+    height: 6rem;
+    grid-row: 1/4;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+.expandedTeamLeaderContainer .teamLeaderPicContainer .teamLeaderPic{
+    width: 6rem;
+    height: 6rem;
+}
+
+.membersContainer{
+    background-color: rgba(2, 62, 138, 0.08);
+    width: 100%;
+    height: 100%;
+    grid-column: 1/4;
+    grid-row: 3/5;
+    overflow: scroll;
+    justify-self: center;
+    align-self: center;
+    border-radius: 0.5rem;
+    border: 1px black solid;
+    position: relative;
+}
+
+
+.toolsContainer{
+    grid-row: 2/3;    
+    grid-column: 3/4;    
+    width: 10rem;
+    height: fit-content;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem ;
+    box-sizing: border-box;
+    justify-self: end;
+    align-self: end;
+    position: relative;
+    right: 1rem;    
+    bottom: 0.3rem;
+    border: 1px black solid;
+}
+
+.toolIcon{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+    box-sizing: content-box;
+    padding: 0.5rem;
+    border: 1px black solid;
+}
+.toolIcon *{
+    fill: #000000;
+    transition: background-color 300ms ease-in-out,fill 100ms ease-in-out;
+}
+.toolIcon:hover{
+    background-color: #1677ab;
+}
+.toolIcon:hover *{
+    fill: #ffffff;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .toolsContainer{
+        width: fit-content !important;
+    }
+    .toolIcon{
+        width: 1rem;
+        height: 1rem;
+    }
+    .expandedTeamLeaderContainer{
+        justify-self: center!important;
+        align-self: center !important;
+        margin-left: 0 !important;
+        margin-top: 0!important;
+    }
+    .expandedTeamInfoContainer .teamName{
+        font-size: 2rem !important;
+    }
+    .expandedTeamInfoContainer .teamAcronym{
+        font-size: 1rem !important;
+    }
+    .expandedTeamLeaderContainer .teamLeaderPic{
+        width: 3rem;
+        height: 3rem;
+    }
+}

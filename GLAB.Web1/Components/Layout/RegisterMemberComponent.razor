@@ -1,0 +1,95 @@
+﻿
+@using GLAB.Web1.Components.Members.Models
+@using Microsoft.AspNetCore.Components.Forms
+@using Glab.Ui.Members.Models
+@using Ids.Files.Views
+@using System.Web;
+
+@inject NavigationManager NavigationManager
+
+
+
+<!-- /////////////////////////////////////////////////bvhvghvgvvg//-->               
+<div class="y-container">
+       
+        <EditForm Model="confirmRegistrationModel" OnValidSubmit="@regsiterMember"  FormName="Register-Member" class="y-complete-regetration-form">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+        @if (hasError)
+        {
+            <div class="alert alert-warning">
+                @errorMessage 
+                .....
+            </div>
+        }
+
+        @if (!hasError && errorMessage == default)
+        {
+            <script>
+                alert("the team is created");
+            </script>
+        }
+     <div class="y-small-container">
+            <div class="y-image-container">
+                <img class="y-image" src="/Photos/small-app-logo.png" alt="lab-creato" srcset="">
+                <img class="y-image" src="/Photos/univlogo.png" alt="lab-creato" srcset="">
+                
+            </div>
+            <div class="y-titel-container">
+                        <p class="y-text">Welcome to the LAB<br> CREATOR App!</p>
+                        <div class="y-line"></div>
+                        <span class="y-user-email">@user.UserName</span>
+            </div>
+            <div class="y-extra-text-container">
+                <p class="y-text">To complete your registration , please fill out the following information.</p>
+                 
+            </div>
+     </div>
+     <div class="y-line-hori"></div>
+    <div class="y-small-container">
+         
+       
+        <div class="y-form-group">
+            <label class="y-input-text" >Profile picture :</label>
+                <ImageUploader Image=@confirmRegistrationModel.Image Width="160" OnFileChanged=@photoChanged />
+
+       </div>
+        <div class="y-form-group">
+                <label class="y-input-text" for="NIC">NIC :</label>
+                <InputText class="y-input"   id="NIC" @bind-Value="confirmRegistrationModel.NIC" placeholder="nic" />
+
+        </div>
+        <div class="y-form-group">
+                <label class="y-input-text" for="PhoneNumber">PhoneNumber :</label>
+                <InputText class="y-input" id="PhoneNumber" @bind-Value="confirmRegistrationModel.PhoneNumber" placeholder="phone number" />
+
+        </div>
+    
+        <div class="y-form-group">
+                <label class="y-input-text" for="PassWord">Password :</label>
+                <input class="y-input"  type="password" id="PassWord" @bind="confirmRegistrationModel.Password" placeholder="password" />
+
+        </div>
+        <div class="y-form-group">
+                <label class="y-input-text" for="ConfirmPassWord-Name">Confirm Password :</label>
+                <input class="y-input"  type="password" id="ConfirmPassWord" @bind="confirmRegistrationModel.ConfirmPassword" placeholder="confirm password" />
+
+        </div>
+
+        <div class="y-button-groupe">
+            <button  class="y-btn-r" type="reset" >Cancel</button>
+            <button  class="y-btn-s" type="submit">Confirm</button>            
+        </div>
+
+
+     
+
+    </div>
+
+ 
+        
+    
+</EditForm>
+
+</div>

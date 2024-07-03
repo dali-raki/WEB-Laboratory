@@ -1,0 +1,119 @@
+.displayTeamsContainer{
+    width: 100%;
+    min-height: 70%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.cardsContainer{
+    border-radius: 0.5rem;
+    border: 1px #ffffff solid;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.03);
+  
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,auto));
+    gap: 3rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.searchBarContainer{
+    min-width: 15rem;
+    width: 25%;
+    height: 2rem;
+    padding: 0.2rem;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    justify-self: end;
+    align-self: end;
+    right: 6rem;
+}
+
+
+.searchIcon{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 1rem;
+}
+.search-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.2rem;
+    background-color: white;
+    border: 1px black solid;
+    box-sizing: border-box;
+    padding: 1rem;
+    transition: outline 150ms ease-in-out;
+}
+
+.displayTeamsButtonContainer{
+  grid-column: 1/3;
+  width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+ 
+}
+.displayTeamsButtons{
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 50%;
+    transition: background-color 200ms ease-in-out;
+    padding: 0.3rem;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+.displayTeamsButtons *{
+    fill: black;
+    transition:  fill 50ms ease-in-out;
+}
+.displayTeamsButtons:hover{
+    background-color: #1a84ec;  
+}
+.displayTeamsButtons:hover *{
+    fill: #ffffff; 
+}
+.displayTeamsButtonsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+    .search-bar:focus {
+        outline: 2px solid rgba(0, 118, 182, 0.368627451);
+    }
+
+.search-bar:not(:focus){
+    outline: 0 black solid;
+}
+
+@media only screen and (max-width: 600px) {
+    .searchBarContainer{
+        justify-self: center;
+        align-self: center;
+        right: 0;
+    }
+}

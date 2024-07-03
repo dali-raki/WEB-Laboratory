@@ -1,0 +1,8 @@
+<div class="dialogMessageContainer dialogMessageContainerShown  @(isError? "errorDialogMessage":"successDialogMessage")" id="dialogMessageContainer">
+    @foreach (var message in messages)
+    {
+        <label class="dialogMessage">@message</label>
+    }
+</div>
+
+<script src="../HCSS/HJS/DialogMessage/DialogMessage.js"></script>

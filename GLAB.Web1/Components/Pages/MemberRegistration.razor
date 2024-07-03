@@ -1,0 +1,24 @@
+﻿@page "/MemberRegistration"
+@page "/member/confirmRegistration/{id}/{token}"
+@rendermode InteractiveServer
+@using GLAB.Web1.Components.Layout
+@using Glab.Ui.Members.Models
+@layout StandardLayout
+
+<PageTitle>Member Registration</PageTitle>
+
+<RegisterMemberComponent @rendermode="RenderMode.InteractiveServer" id=@id token=@token OnRegistered=@redirectToLogin/>
+@code {
+    [Inject] private NavigationManager navigationManager { get; set; }
+
+    [Parameter] public string id { get; set; }
+
+    [Parameter] public string token { get; set; }
+
+    ConfirmRegistrationModel confirmRegistrationModel = new ConfirmRegistrationModel();
+
+    private void redirectToLogin()
+    {
+        navigationManager.NavigateTo("/");
+    }
+}

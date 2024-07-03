@@ -1,0 +1,214 @@
+﻿.y-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.y-main-container {
+    grid-area: main;
+    position: relative;
+    
+}
+
+    .y-main-container .y-path-section {
+        padding: 2rem;
+        padding-left: 4rem;
+        padding-top: 5rem;
+    }
+
+        .y-main-container .y-path-section .y-path-text {
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 2rem;
+        }
+
+    .y-main-container .y-informations-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding: 1rem;
+        padding-left: 4rem;
+    }
+
+        .y-main-container .y-informations-container .y-info {
+            background-color: #ffffff;
+            border-radius: 0.2rem;
+            box-shadow: 0px 0 5px 2px rgba(156, 155, 155, 0.288);
+            padding: 2rem 2rem 3.5rem 2rem;
+        }
+
+            .y-main-container .y-informations-container .y-info .y-title {
+                font-family: "Roboto", sans-serif;
+                font-weight: 600;
+                font-style: normal;
+                font-size: 1.5rem;
+                color: #0f2b1e;
+            }
+
+            .y-main-container .y-informations-container .y-info .y-line {
+                margin-top: 1rem;
+                width: 10rem;
+                height: 0.5rem;
+                border-radius: 1rem;
+                background-color: #0f2b1e;
+                margin-bottom: 2rem;
+            }
+
+            .y-main-container .y-informations-container .y-info .y-personal-info, .y-main-container .y-informations-container .y-info .y-laboratory-info {
+                gap: 5%;
+                margin-bottom: 2rem;
+            }
+
+            .y-main-container .y-informations-container .y-info .y-email-adress-extra {
+                width: 63% !important;
+            }
+
+            .y-main-container .y-informations-container .y-info .y-input-container {
+                width: 29%;
+            }
+
+                .y-main-container .y-informations-container .y-info .y-input-container .y-label-text {
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 500;
+                    font-style: normal;
+                    font-size: 1.3rem;
+                    margin-bottom: 1rem;
+                }
+
+                .y-main-container .y-informations-container .y-info .y-input-container .y-input {
+                    padding: 1rem;
+                    font-size: 1rem;
+                    border-radius: 0.2rem;
+                    border: 1px solid rgba(151, 151, 151, 0.568627451);
+                    background-color: rgba(214, 209, 209, 0.568627451);
+                }
+
+                    .y-main-container .y-informations-container .y-info .y-input-container .y-input:focus {
+                        outline: 2px solid rgba(0, 118, 182, 0.368627451);
+                    }
+
+                .y-main-container .y-informations-container .y-info .y-input-container .y-selcet {
+                    padding: 1rem;
+                    border-radius: 0.2rem;
+                    border: 1px solid rgba(151, 151, 151, 0.568627451);
+                    background-color: rgba(214, 209, 209, 0.568627451);
+                    font-size: 1rem;
+                }
+
+                    .y-main-container .y-informations-container .y-info .y-input-container .y-selcet option {
+                        font-size: 1.2rem;
+                    }
+
+                    .y-main-container .y-informations-container .y-info .y-input-container .y-selcet:focus {
+                        outline: 2px solid rgba(0, 118, 182, 0.368627451);
+                    }
+
+                .y-main-container .y-informations-container .y-info .y-input-container .y-check-boxs {
+                    gap: 1rem;
+                    padding: 1rem;
+                    border-radius: 0.2rem;
+                    border: 1px solid rgba(151, 151, 151, 0.568627451);
+                }
+
+                    .y-main-container .y-informations-container .y-info .y-input-container .y-check-boxs .y-checkbox {
+                        gap: 1rem;
+                    }
+
+                        .y-main-container .y-informations-container .y-info .y-input-container .y-check-boxs .y-checkbox .y-checkbox-2 {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }
+
+                        .y-main-container .y-informations-container .y-info .y-input-container .y-check-boxs .y-checkbox .y-checkbox-text {
+                            font-size: 1.2rem;
+                        }
+
+        .y-main-container .y-informations-container .y-button-groupe-container {
+            padding: 1rem;
+            display: flex;
+            justify-content: end;
+        }
+
+            .y-main-container .y-informations-container .y-button-groupe-container .y-button-group {
+                gap: 1rem;
+                width: 50%;
+                justify-content: end;
+            }
+
+                .y-main-container .y-informations-container .y-button-groupe-container .y-button-group .y-btn {
+                    padding: 1.3rem 1rem;
+                    font-size: 1.4rem;
+                    border-radius: 0.2rem;
+                    border: 1px solid rgba(151, 151, 151, 0.568627451);
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 600;
+                    font-style: normal;
+                    cursor: pointer;
+                }
+
+                .y-main-container .y-informations-container .y-button-groupe-container .y-button-group .submit-btn {
+                    border-radius: 0.2rem;
+                    color: white;
+                    padding: 2vh;
+                    background-color: #095cc4;
+                    font-weight: bold;
+                    border: none;
+                }
+
+                    .y-main-container .y-informations-container .y-button-groupe-container .y-button-group .submit-btn:hover, .y-main-container .y-informations-container .y-button-groupe-container .y-button-group .submit-btn:focus {
+                        background-color: #096ae5;
+                        color: #ffffff;
+                        box-shadow: 0px 0 5px 2px rgba(156, 155, 155, 0.288);
+                    }
+
+                .y-main-container .y-informations-container .y-button-groupe-container .y-button-group .reset-btn {
+                    color: #5c5959;
+                }
+
+                    .y-main-container .y-informations-container .y-button-groupe-container .y-button-group .reset-btn:hover, .y-main-container .y-informations-container .y-button-groupe-container .y-button-group .reset-btn:focus {
+                        color: #353535;
+                        box-shadow: inset 0 0 5px 2px rgba(156, 155, 155, 0.123);
+                    }
+
+@media (max-width: 750px) {
+    .y-main-container .y-informations-container {
+        padding: 1rem !important;
+        gap: 1rem !important;
+    }
+
+        .y-main-container .y-informations-container .y-info {
+            box-shadow: none;
+        }
+
+            .y-main-container .y-informations-container .y-info .y-personal-info, .y-main-container .y-informations-container .y-info .y-laboratory-info {
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .y-main-container .y-informations-container .y-info .y-input-container {
+                width: 100% !important;
+            }
+
+    .y-button-groupe-container .y-button-group {
+        width: 70% !important;
+    }
+
+    .y-main-container .y-informations-container .y-button-groupe-container .y-button-group .y-btn {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 8px; /* This is the default value in most browsers */
+    }
+
+    .y-button-groupe-container {
+        justify-content: center;
+    }
+
+        .y-button-groupe-container .y-button-group {
+            width: 100%;
+        }
+}
+/*# sourceMappingURL=AddMembers-V2.css.map */

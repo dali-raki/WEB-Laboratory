@@ -1,0 +1,237 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+    .D-titel-page span {
+        font-size: 2.5rem;
+    }
+
+
+
+.D-create-part1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+}
+
+.D-create-part2 {
+    margin-bottom: 5vh;
+}
+
+.D-part2-1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+
+.D-part2-1-acronyme {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.D-part2-1-faculty {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.D-part2-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.D-part2-2-nagrement {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.D-part2-2-dateagrement {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.D-part3-emailadmin {
+    display: flex;
+    flex-direction: column;
+}
+
+.D-form-button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+}
+
+    .D-form-button .cancel-btn {
+        padding: 1.3rem 1rem;
+        font-size: 1.4rem;
+        border-radius: 0.2rem;
+        border: 1px solid rgba(151, 151, 151, 0.568627451);
+        font-weight: 600;
+        font-style: normal;
+        cursor: pointer;
+    }
+
+    .D-form-button .create-labo-btn {
+        border-radius: 0.2rem;
+        color: white;
+        padding: 2vh;
+        background-color: #095cc4;
+        font-weight: bold;
+        font-size: 1.8rem;
+        border: none;
+    }
+        .D-form-button .create-labo-btn:hover {
+            background-color: #096ae5;
+        }
+
+
+.D-form-create-labo-by-manager form label {
+    font-size: 1.6rem;
+    margin-bottom: 0.8vh;
+    margin-left: 1.5vh;
+}
+
+.D-form-create-labo-by-manager form input, .D-form-create-labo-by-manager form select {
+    padding: 1vh 3vh;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    font-size: 1.6rem;
+}
+
+    .D-form-create-labo-by-manager form input:focus, .D-form-create-labo-by-manager form select:focus {
+        outline: 2px solid rgba(0, 118, 182, 0.368627451);
+    }
+    .D-form-create-labo-by-manager form select option{
+        font-size: 1.6rem;
+    }
+
+        hr.D-create-labo-hr {
+            border: 1px solid #023E8A;
+            margin: 4vh 0;
+        }
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .D-form-button .create-labo-btn{
+        font-size:1.4rem;
+    }
+}
+
+
+@media screen and (min-width: 427px) and (max-width: 768px) {
+
+    .D-part2-1-acronyme {
+        width: 100%;
+    }
+
+    .D-part2-1-faculty {
+        width: 100%;
+    }
+
+    .D-part2-2-nagrement {
+        width: 100%
+    }
+
+    .D-part2-2-dateagrement {
+        width: 100%;
+    }
+  
+
+    .D-part2-1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .D-part2-2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .D-form-button .cancel-btn, .D-form-button .create-labo-btn {
+        font-size: 1.4rem;
+    }
+
+    .D-logo-left-nav #part1 {
+        width: 6vw;
+    }
+
+    .D-form-create-labo-by-manager form label {
+        margin-top: 1.5rem;
+    }
+}
+
+
+
+@media screen and (min-width: 21px) and (max-width: 426px) {
+
+    .D-titel-page span {
+        font-size: 2rem;
+    }
+
+    .D-titel-page {
+        width: max-content;
+    }
+
+   
+    .D-part2-1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .D-part2-1-acronyme {
+        width: 100%;
+    }
+
+    .D-part2-1-faculty {
+        width: 100%;
+    }
+
+    .D-part2-2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .D-form-create-labo-by-manager form label {
+        font-size: 1.6rem;
+        margin: 1.5vh;
+    }
+
+        .D-form-create-labo-by-manager form input, select {
+            font-size: 1.6rem;
+        }
+
+    .D-form-button .cancel-btn{
+        font-size:1.4rem;
+    }
+    .D-form-button .create-labo-btn {
+        font-size: 1.4rem;
+    }
+    .D-form-create-labo-by-manager form select option{
+        font-size:1rem;
+    }
+    .D-part2-2-nagrement {
+        width: 100%
+    }
+
+    .D-part2-2-dateagrement {
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 20px) and (max-width: 320px) {
+    .D-part2-2-nagrement {
+        width: 100%
+    }
+
+    .D-part2-2-dateagrement {
+        width: 100%;
+    }
+}

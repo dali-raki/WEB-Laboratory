@@ -1,0 +1,153 @@
+﻿@using GLAB.Domains.Models.Members
+@using Glab.Domains.Models.Grades
+@using Ids.Files.Views
+@using Microsoft.AspNetCore.Components.Forms
+
+                    <div class="info-content">
+                        <h1 class="main-add-lab-title">Lab general information</h1>
+                        <EditForm class="input-lab-admin-form" Model="labobyadmin" OnValidSubmit="createLabByAdmin" FormName="createLaboForm">
+                            <DataAnnotationsValidator/>
+                            <ValidationSummary/>
+                            @if (@labInfo is not null)
+                            {
+                             <div class="main-data">
+                                <div class="lab-acro">
+                                    <h4>Acronyme</h4>
+                                    <InputText type="text" @bind-Value=@labInfo.Acronyme disabled="disabled" />
+                                </div>
+
+
+
+                                <div class="lab-name">
+                                    <h4>Laboratory name</h4>
+                                    <InputText type="text" @bind-Value=@labInfo.Name disabled="disabled" />
+                                </div>
+                                </div>
+                
+                             }
+                            <hr class="input-divider" />
+
+                            <div class="addr-phone">
+                                <div class="address">
+                                    <h4>Address</h4>
+                                    <InputText @bind-Value=@labobyadmin.Adresse placeholder="Enter laboratory address" />
+                                </div>
+                                <div class="phone">
+                                    <h4>Phone</h4>
+                                    <InputText @bind-Value=@labobyadmin.PhoneNumber placeholder="Enter laboratory phone number" />
+                                </div>
+                            </div>
+
+
+                             <hr class="input-divider" />
+
+                          
+
+                                     
+
+                                          
+                                            <div class="lab-name">
+                                                <h4>Website</h4>
+                                                <InputText @bind-Value=@labobyadmin.WebSite placeholder="Enter laboratory website" />
+                                            </div>
+
+                                            @if(members != null)
+                                            {
+                                            <div class="lab-director">
+                                                <h4>Director</h4>
+                                                <div class="select-director-content">
+                                                <InputSelect class="y-selcet" @bind-Value=@labobyadmin.DirectorId>
+                                                    @foreach (Member member in members)
+                                                    {
+                                                        <option value="@member.MemberId">@member.FirstName</option>
+                                                    }
+                                                </InputSelect>
+                                
+                                                <button type="submit" class="add-member-btn"  @onclick="addmember">Add member +</button>
+                                                </div>
+                                            </div>
+            
+                                            }
+
+                                            <div class="lab-director">
+                                            <h4>Logo</h4>
+                                            <div>
+                                                <ImageUploader Image=@labobyadmin.Logo Width="160" OnFileChanged=@photoChanged/>
+                              
+                                            </div>
+                                            <p>@FileName</p>
+                                        </div>
+                                   
+
+                         
+
+
+
+
+                            <div class="add-lab-content">
+                                <button class="add-lab-btn" type="submit">
+                                    SAVE
+                                </button>
+                            </div>
+                        </EditForm>
+
+    @if (success != null)
+    {
+        <div class="D-pop-up-manager-pos">
+
+            <div class="D-success-text">@success</div>
+
+
+        </div>
+    }
+                    </div>
+
+
+@code {
+    [Parameter] public string id { get; set; }
+    public string FileName { get; set; } = "";
+    public string FileType { get; set; } = "";
+    public long FileSize { get; set; } 
+    public DateTimeOffset LastModified { get; set; }
+    const int MAX_FILESIZE = 1024 * 5000;
+    public string ErrorMessage { get; set; } = "";
+    [Inject] private NavigationManager navigationManager { get; set; }
+
+    private void addmember()
+    {
+        navigationManager.NavigateTo("/add-member");
+    }
+
+    public async Task FileUploaded(InputFileChangeEventArgs e)
+    {
+        var browserFile = e.File;
+        if(browserFile != null)
+        {
+            FileName = browserFile.Name;
+            FileSize = browserFile.Size;
+            FileType = browserFile.ContentType;
+            LastModified = browserFile.LastModified;
+
+            try
+            {
+                var fileStream = browserFile.OpenReadStream(MAX_FILESIZE);
+
+                var randomFile = Path.GetRandomFileName();
+                var extension = Path.GetExtension(browserFile.Name);
+                var targetPath = Path.ChangeExtension(randomFile, extension);
+
+                var targetStream = new FileStream(targetPath, FileMode.Create);
+
+                await fileStream.CopyToAsync(targetStream);
+                targetStream.Close();
+
+            }catch(Exception exception)
+            {
+                ErrorMessage = exception.Message;
+
+            }
+        }
+
+    }
+
+}

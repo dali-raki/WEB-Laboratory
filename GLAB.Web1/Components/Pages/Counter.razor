@@ -1,0 +1,36 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+@inject NavigationManager NavigationManager
+@layout StandardLayout
+ <div class="fake-home">
+<button type="button" @onclick="Login">Login</button>
+<button type="button" @onclick="CLabo">Create Labo</button>
+<button type="button" @onclick="CTeam">Create Team</button>
+<button type="button" @onclick="Registration">Registration</button>
+</div>
+
+
+@code {
+    [Inject] private NavigationManager navigationManager { get; set; }
+
+    private void Login()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
+    private void CLabo()
+    {
+        navigationManager.NavigateTo("/Labs/Create");
+    }
+
+    private void CTeam()
+    {
+        navigationManager.NavigateTo("/home");
+    }
+
+    private void Registration()
+    {
+        navigationManager.NavigateTo("/member/new");
+    }
+
+}

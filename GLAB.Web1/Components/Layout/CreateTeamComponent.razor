@@ -1,0 +1,73 @@
+﻿@using GLAB.Domains.Models.Members
+@using GLAB.Web1.Components.Teams.Models
+@using Microsoft.AspNetCore.Components.Forms
+
+
+<div class="D-pop-up-manager-pos">
+
+
+    @if (!string.IsNullOrEmpty(success))
+    {
+        <div class="D-success-text">@success</div>
+
+    }
+
+
+</div>
+
+<div class="y-path-section">
+    <span class="y-path-text"> Manage Teams / Add team</span>
+</div>
+
+
+
+        <EditForm Model="teamModel" OnValidSubmit="@CreateTeam" class="create-team" FormName="create-team">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+      
+  
+
+            <!--/////////////////:::://////////////////////////-->
+    <div class="y-informations-container y-flex-column">
+
+        <div class=" y-info">
+            <span class="y-title"> Personal informations</span>
+            <div class="y-line"></div>
+            <div class="y-personal-info y-felx-row">
+                <div class="y-input-container y-flex-column">
+                    <span class="y-label-text">Team Name</span>
+                    <InputText class="y-input" @bind-Value="teamModel.TeamName" placeholder="team name" />
+                </div>
+                <div class="y-input-container y-flex-column">
+                    <span class="y-label-text">Team Acronyme</span>
+                    <InputText class="y-input" @bind-Value="teamModel.TeamAcronyme" placeholder="team acronyme" />
+                </div>
+                <div class="y-input-container y-flex-column">
+                    <span class="y-label-text">Team Leader</span>
+                    <InputSelect class="y-selcet" @bind-Value=@teamModel.TeamLeaderId>
+                        <option class="y-select-options" selected>Choose a leader</option>
+                        @foreach (Member member in members)
+                        {
+                            <option value="@member.MemberId">@member.FirstName @member.LastName</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+          
+        </div>
+
+        <div class="y-button-groupe-container">
+            <div class="y-button-group y-felx-row">
+                <button class="reset-btn y-btn" type="reset">Reset</button>
+                <button class="submit-btn y-btn" type="submit">Add Team</button>
+                
+            </div>
+        </div>
+
+
+
+
+    </div>
+        </EditForm>
+    
+

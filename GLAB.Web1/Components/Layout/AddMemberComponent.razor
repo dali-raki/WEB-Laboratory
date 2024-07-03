@@ -1,0 +1,108 @@
+﻿@using GLAB.Domains.Models.Teams
+@using Glab.Domains.Models.Roles
+@using Glab.Domains.Models.Grades
+@using Microsoft.AspNetCore.Components.Forms
+@using Glab.Ui.Members.Models
+
+
+<div class="D-pop-up-manager-pos">
+
+
+    @if (!string.IsNullOrEmpty(success))
+        {
+            <div class="D-success-text">@success</div>
+
+        }
+
+    
+</div>
+
+
+
+
+<div class="y-path-section">
+    <span class="y-path-text"> Manage Members / Add members</span>
+</div>
+<EditForm class="y-add-member-form" Model="member" OnValidSubmit="createMember" FormName="createMemberForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+   
+
+    <div class="y-informations-container y-flex-column">
+
+        <div class=" y-info">
+            <span class="y-title"> Personal informations</span>
+            <div class="y-line"></div>
+            <div class="y-personal-info y-felx-row">
+                <div class="y-input-container y-flex-column">
+                    <span class="y-label-text">First Name</span>
+                    <InputText class="y-input"  @bind-Value=@member.Nom placeholder="first name"  />
+                </div>
+                <div class="y-input-container y-flex-column">
+                    <span class="y-label-text">Last Name</span>
+                    <InputText class="y-input"   @bind-Value=@member.Prenom placeholder="last name" />
+                </div>
+                <div class="y-input-container y-flex-column">
+                    <span class="y-label-text">Grade</span>
+                    <InputSelect class="y-selcet" @bind-Value=@member.GradeId >
+                        <option class="y-select-options" selected>Choose Grade</option>
+                        @foreach (Grade grade in grades)
+                        {
+                            <option value="@grade.GradeId">@grade.GradeName</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+            <div class="y-personal-info y-felx-row">
+                <div class="y-input-container y-flex-column">
+                    <span class="y-label-text">Team</span>
+                    @if(teams is not null){
+                    <InputSelect class="y-selcet" @bind-Value=@member.Equipe>
+                        <option class="y-select-options" selected>Choose Team</option>
+                        @foreach (Team team in teams)
+                        {
+                            <option value="@team.TeamId">@team.TeamName</option>
+                        }
+                    </InputSelect>
+                    }
+                    else{
+                    <InputSelect class="y-selcet" @bind-Value=@member.Equipe>
+                        <option class="y-select-options" selected value=NULL>No Teams </option>
+                     
+                    </InputSelect>
+                    }
+
+                </div>
+                <div class="y-input-container y-flex-column y-email-adress-extra">
+                    <span class="y-label-text">Email Adress</span>
+                    <InputText class="y-input" @bind-Value=@member.Email placeholder="email address" />
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="y-button-groupe-container">
+            <div class="y-button-group y-felx-row">
+               
+                <button class="reset-btn y-btn" type="reset">Reset</button>
+
+                <button class="submit-btn y-btn" type="submit">Add member</button>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</EditForm>
+@code {
+    [Parameter]
+    public string id { get; set; }
+
+    [Parameter]
+    public string token { get; set; }
+
+      
+ 
+}

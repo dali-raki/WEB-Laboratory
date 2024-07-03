@@ -1,0 +1,30 @@
+<div class="addMemberPopupContainer">
+   
+
+
+    <div class="addMemberPopupContent addMemberPopupContentShown" id="addMemberPopupContent">
+        @if (isLoading)
+        {
+            <LoadingBar></LoadingBar>
+        }
+        <svg @onclick="Exit" class="addMemberPopupExitButton" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9393 12L6.9696 15.9697L8.03026 17.0304L12 13.0607L15.9697 17.0304L17.0304 15.9697L13.0607 12L17.0303 8.03039L15.9696 6.96973L12 10.9393L8.03038 6.96973L6.96972 8.03039L10.9393 12Z" fill="#000000"></path> </g></svg>
+
+        <input class="addMemberPopupFields" placeholder="First Name" @bind="member.Nom"/>
+        <input class="addMemberPopupFields" placeholder="Last Name" @bind="member.Prenom"/>
+        <input class="addMemberPopupFields" placeholder="Email" @bind="member.Email"/>
+
+        <select class="addMemberSelectLeader" @bind="member.GradeId">
+            @foreach (var grade in grades)
+            {
+                <option value="@grade.GradeId">@grade.GradeName</option>
+            }
+        </select>
+
+        <div class="addMemberPopupButtonContainer">
+            <button @onclick="createMember" class="addTeamPopupCreateButton">Create New Team</button>
+            <button @onclick="ClearFields" class="addTeamPopupClearButton">Clear</button>
+        </div>
+
+    </div>
+
+</div>

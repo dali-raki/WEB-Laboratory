@@ -1,0 +1,50 @@
+﻿<!--start nav-left section -->
+
+<div class="y-nav-left close" id="y-nav-left">
+    <div class="y-header-icon" onclick="OpenCloseNavLeft()" id="y-header-icon-navleft">
+        <i class='bx bx-menu y-show'></i>
+    </div>
+
+
+
+    @if(profile == "2")
+    {
+
+
+        <NavLink href="/Labs/DisplayTeam" class="y-nav-items-2">
+            <div class="y-nav-item y-felx-row">
+                <i class='bx bx-group y-nav-item-icon'></i>
+                <span class="y-nav-item-text">Teams</span>
+            </div>
+        </NavLink>
+
+
+        <NavLink href="/Labs/CreateAdmin" class="y-nav-items-2">
+            <div class="y-nav-item y-felx-row">
+                <i class='bx bx-dna y-nav-item-icon'></i>
+                <span class="y-nav-item-text">Laboratories</span>
+            </div>
+        </NavLink>
+
+    }
+
+
+ 
+    
+    
+    <form class="loginform" action="/Login/Logout" method="post">
+
+        
+
+        <button type="submit" class="y-nav-items-2">
+            <div class="y-nav-item y-felx-row">
+                <i class='bx bx-door-open y-nav-item-icon'></i>
+                <span class="y-nav-item-text">Logout</span>
+            </div>
+        </button>
+
+    </form>
+
+
+</div>
+<!--end nav-left section -->

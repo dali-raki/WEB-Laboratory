@@ -1,0 +1,55 @@
+@page "/"
+@using GLAB.Web1.Components.Layout
+@layout StandardLayout
+
+<PageTitle>Login</PageTitle>
+
+<body class="login-body-D">
+    <nav class="nav-LoginUser">
+
+        <div class="D-logo" id="D-logo-login">
+
+            <span> <span class="part1">L</span><span class="part2">AB</span> <br><span class="part3">Creator</span></span>
+
+        </div>
+
+        <div class="D-text-login">
+
+            <span class="univ-name">University Mohamed Khider Biskra</span>
+            <span class="getion-name">Laboratory Management</span>
+
+
+        </div>
+
+    </nav>
+
+    <section class="loginform">
+
+
+
+        <div class="logincontent">
+
+            <div class="LoginTitel">
+            </div>
+            <h2>Login</h2>
+            <form class="loginform" action="/Login/Login" method="post">
+
+                <input type="email" name="username" placeholder="Email" required value="daliraki19@gmail.com
+" />
+                <input type="password" name="password" placeholder="Password" required  value="JEyO96Rls5F7dzEM"/>
+
+
+
+                <button type="submit">Login</button>
+
+
+            </form>
+        </div>
+
+
+
+
+    </section>
+
+
+</body>

@@ -1,0 +1,134 @@
+@keyframes revealDialogBox {
+  from{
+      opacity: 0;
+  }  
+  to{
+      opacity: 1;
+  }  
+}
+
+.confirmDialogBackground{
+    animation: revealDialogBox 300ms ease-in-out forwards;
+    background-color: rgba(0, 0, 0, 0.59);
+    position: absolute;
+    z-index: 1000;
+    width: 100lvw;
+    height: 100lvh;
+    left: 0;
+    top: 0;
+}
+
+
+.confirmDialogContainer{
+    width: 30vw;
+    height: 25vh;
+    min-width: 30rem;
+    min-height: 15rem;
+    background-color: rgb(255, 255, 255);
+    border: 1px black solid;
+    border-radius: 0.5rem;
+    z-index: 1000;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    padding: 1rem;
+    column-gap: 3rem;
+}
+
+
+@keyframes showConfirmDialog {
+    from{
+      opacity: 0;
+        transform: translate(-50%,-100%) ;
+    }
+    to{
+      opacity: 1;
+        transform: translate(-50%,20%) ;
+    }
+}
+@keyframes hideConfirmDialog {
+    from{
+        opacity: 1;
+
+        transform: translate(-50%,20%) ;
+    }
+    to{
+        opacity: 0;
+        transform: translate(-50%,-100%) ;
+    
+    }  
+}
+
+.confirmDialogShown{
+    animation: showConfirmDialog 300ms ease-in-out forwards;
+}
+.confirmDialogHidden{
+    animation: hideConfirmDialog 300ms ease-in-out forwards;
+}
+
+
+.confirmDialogMessage{
+    grid-column: 1/3;
+    width: 85%;
+    background-color: white;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.confirmDialogButton{
+    width: 50%;
+    padding: 0.5rem;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    color: white;
+    transition: color 300ms ease-in-out,background-color 300ms ease-in-out;
+    justify-self: start;
+    align-self: end;
+}
+
+
+.confirmDialogConfirmButton:hover{
+    background-color: #f10940;
+
+    color: white;
+}
+
+.confirmDialogConfirmButton{
+    background-color: #d30636;
+}
+
+.confirmDialogCancelButton{
+    width: 50%;
+    padding: 0.5rem;
+    background-color: #068bd3;
+    justify-self: end;
+}
+
+.confirmDialogCancelButton:hover{
+    background-color: #109bf1;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .confirmDialogContainer{
+        width: 85%;
+    }
+   .confirmDialogButton{
+       grid-column: 1/3;
+   }
+    .confirmDialogCancelButton{
+        grid-row: 2;
+    }
+    .confirmDialogCancelButton{
+        margin-bottom: 1rem;
+        grid-row: 3;
+    }
+}

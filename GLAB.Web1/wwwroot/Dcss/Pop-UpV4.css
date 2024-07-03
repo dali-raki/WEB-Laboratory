@@ -1,0 +1,60 @@
+﻿.D-pop-up-manager-pos {
+    display: flex;
+    justify-content: center;
+}
+.D-eroor-text {
+    position:fixed;
+    bottom:100%;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2rem;
+    color: white;
+    background-color: #ff3333;
+    padding: 1rem;
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.D-eroor-text span {
+    font-size:1.2rem;
+}
+
+    @-webkit-keyframes slide-bottom {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        100% {
+            -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+        }
+    }
+
+    @keyframes slide-bottom {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        100% {
+            -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+        }
+    }
+
+.D-success-text {
+    position: fixed;
+    bottom: 100%;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 2rem;
+    color: white;
+    background-color: #22bb33;
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+

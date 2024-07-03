@@ -1,0 +1,11 @@
+<div class="confirmDialogBackground">
+    
+    <div class="confirmDialogContainer confirmDialogShown" id="confirmDialog">
+        <label class="confirmDialogMessage">@dialogMessage</label>
+
+        <button @onclick="closeDialog" class="confirmDialogButton confirmDialogCancelButton">@cancelButtonLabel</button>
+        <button @onclick="confirm" class="confirmDialogButton confirmDialogConfirmButton">@confirmButtonLabel</button>
+
+    </div>
+    
+</div>

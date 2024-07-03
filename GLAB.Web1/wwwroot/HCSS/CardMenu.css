@@ -1,0 +1,76 @@
+
+@keyframes revealCardAnimation {
+    from{
+        transform: translateY(0.2rem);
+        opacity: 0;
+        pointer-events: none;
+    }
+    to{
+        transform: translateY(1.2rem);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+@keyframes hideCard {
+    from{
+        transform: translateY(1.2rem);
+        opacity: 1;
+    }
+    to{
+        transform: translateY(0.2rem);
+        opacity: 0;
+    }
+}
+
+.cardMenuContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-items: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0.8rem;
+    height: 5rem;
+    width: fit-content;
+    border-radius: 1rem 1rem 4rem 4rem;
+    background-color: rgba(0, 0, 0, 0.84);
+    padding: 0.2rem;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+.revealMenu{
+    animation: revealCardAnimation 450ms ease-in-out forwards;
+}
+
+.hideMenu{
+    animation: hideCard 450ms ease-in-out forwards;
+}
+
+.cardMenuIcons{
+    cursor: pointer;
+    z-index: 2;
+}
+
+.cardMenuIcons *{
+    transition: stroke 250ms ease-out,fill 250ms ease-out;
+}
+
+.deleteCardButton{
+    width: 1.7rem;
+    height: 1.7rem;
+    position: relative;
+}
+
+.deleteCardButton:hover * {
+    stroke: #e3115b;
+    fill: white;
+}
+
+.updateCadButton{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.updateCadButton:hover *{
+    fill: #90E0EF;
+}

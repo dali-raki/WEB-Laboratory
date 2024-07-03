@@ -1,0 +1,125 @@
+﻿@using GLAB.Domains.Shared
+@using Glab.Domains.Models.Faculties
+@using static System.Runtime.InteropServices.JavaScript.JSType;
+<div class="D-pop-up-manager-pos">
+    @if (@result != null)
+    {
+        @if (@result.ErrorCodes is not null)
+        {
+            <div class="D-eroor-text">
+                @foreach (var error in result.ErrorCodes)
+                {
+
+                    <span> @error.Message !</span>
+
+
+                }
+            </div>
+        }
+
+
+
+
+        @if (@result.Successed)
+        {
+            <div class="D-success-text">"Laboratory is Created"</div>
+
+        }
+
+    }
+</div>
+<div class="D-titel-page">
+
+    <span>Create Laboratory</span>
+
+</div>
+
+<div class="D-form-create-labo-by-manager">
+
+    <EditForm class="create-lab-form-D" Model="newlabo" OnValidSubmit="save" FormName="createLaboForm">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="D-create-part1">
+            <label for="">Name of Laboratory</label>
+            <InputText @bind-Value=@newlabo.Name placeholder="Name of Laboratory" />
+        </div>
+
+        <hr class="D-create-labo-hr">
+
+        <div class="D-create-part2">
+
+            <div class="D-part2-1">
+                <div class="D-part2-1-acronyme">
+                    <label for="">Acronyme</label>
+                    
+                    <InputText @bind-Value=@newlabo.Acronyme placeholder="Acronyme" />
+                </div>
+
+
+                <div class="D-part2-1-faculty">
+                    <label for="">faculty</label>
+                    <InputSelect @bind-Value=@newlabo.Faculty>
+                                 <option>Select Faculty</option>
+
+                        @foreach (Faculty faculty in facultys )
+                        {
+                           <option value="@faculty.FacultyId"> @faculty.Name </option> 
+                        }
+                    
+                                 
+                   </InputSelect>
+                </div>
+
+
+            </div>
+
+
+            <div class="D-part2-2">
+
+                <div class="D-part2-2-nagrement">
+                    <label for="">N Agrement</label>
+                    <InputText @bind-Value=@newlabo.NumAgrement placeholder="Number of Agrement" />
+                </div>
+
+                <div class="D-part2-2-dateagrement">
+                    <label for="">Date Agrement</label>
+                    <InputDate @bind-Value=@newlabo.DateAgrement placeholder="Date of Agrement" />
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <hr class="D-create-labo-hr">
+
+
+        <div class="D-create-part3">
+
+            <div class="D-part3-emailadmin">
+                <label for="">Email of Laboratory Administrator</label>
+                <InputText @bind-Value=@newlabo.Email placeholder="Email of Laboratory Administrator" />
+            </div>
+
+        </div>
+
+
+        <div class="D-form-button">
+
+
+            <button class="cancel-btn" type="reset">Reset</button>
+            <button type="submit" class="create-labo-btn">Create Labo</button>
+
+        </div>
+
+
+
+
+
+    </EditForm>
+   
+
+</div>
+
+
+

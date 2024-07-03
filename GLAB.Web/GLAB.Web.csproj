@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Glab.App\Glab.App.csproj" />
+    <ProjectReference Include="..\Glab.Implementation\Glab.Implementation.csproj" />
+  </ItemGroup>
+
+</Project>

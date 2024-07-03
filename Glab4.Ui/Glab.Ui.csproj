@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Core" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Email.App\Email.App.csproj" />
+    <ProjectReference Include="..\Glab.App\Glab.App.csproj" />
+    <ProjectReference Include="..\Glab.Domain\Glab.Domains.csproj" />
+    <ProjectReference Include="..\Glab.Implementation\Glab.Implementation.csproj" />
+    <ProjectReference Include="..\Users.App\Users.App.csproj" />
+    <ProjectReference Include="..\Users.Implementation\Users.Implementation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Roles\Models\" />
+  </ItemGroup>
+
+</Project>

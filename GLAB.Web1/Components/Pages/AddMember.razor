@@ -1,0 +1,22 @@
+﻿@page "/add-member"
+@page "/member/new"
+@page "/member/new/{id}/{token}"
+@using GLAB.Web1.Components.Layout
+@using GLAB.Domains.Models.Teams
+@using Microsoft.AspNetCore.Components.Forms
+@using Glab.Ui.Members.Models
+@layout MainLayout
+
+
+<PageTitle>Add Member</PageTitle>
+<AddMemberComponent @rendermode="RenderMode.InteractiveServer" id=@id token=@token />
+
+
+@code {
+    [Inject] private NavigationManager navigationManager { get; set; }
+
+    [Parameter] public string id { get; set; }
+
+    [Parameter] public string token { get; set; }
+
+}

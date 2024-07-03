@@ -1,0 +1,274 @@
+
+﻿* {
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+﻿
+
+}
+
+.login-body-D {
+    margin-top: 15vh;
+    background-color: #FFFFFF;
+}
+
+
+a {
+    text-decoration: none;
+    color: #0D2818;
+}
+
+
+
+.nav-LoginUser {
+    display: flex;
+    justify-content: center;
+    border: none;
+    flex-direction: column;
+}
+
+nav .logonav img {
+    margin: -13vh 0;
+    height: 40vh;
+    width: 40vh;
+}
+
+.LoginTitel {
+    display: flex;
+    justify-content: center;
+}
+
+    .LoginTitel h1 {
+        color: #0D2818;
+    }
+
+.loginform {
+    height: max-content;
+    display: flex;
+    justify-content: center;
+}
+
+#D-logo-login {
+    margin: 4vh;
+}
+
+.D-logo .part1 {
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #38B6FF;
+    padding: 0.5vh 0.8vh;
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+}
+
+.D-logo .part2 {
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.D-logo .part3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    left: 50%;
+}
+
+
+#D-logo-login {
+    display: flex;
+    justify-content: center;
+}
+
+.D-text-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+span.univ-name {
+    margin-bottom: 2vh;
+    font-size: 3rem;
+}
+
+span.getion-name {
+    margin-bottom: 2vh;
+    font-size: 2rem;
+}
+
+.loginform .logincontent {
+    background-color: #fff;
+    padding: 3vh 4vh;
+    width: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+    .loginform .logincontent h2 {
+        margin-bottom: 7vh;
+        font-size: 3rem;
+    }
+
+    .loginform .logincontent form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .loginform .logincontent form input {
+            font-size: 1.2rem;
+            padding: 1.5vh;
+            margin-bottom: 3vh;
+            border-radius: 4px;
+            width: 42vh;
+            border: none;
+            border-bottom: 1px solid #38B6FF;
+        }
+
+            .loginform .logincontent form input:focus {
+                outline: 2px solid rgba(0, 118, 182, 0.368627451);
+            }
+
+            .loginform .logincontent form input::-moz-placeholder {
+                color: #0D2818;
+            }
+
+            .loginform .logincontent form input::placeholder {
+                color: #0D2818;
+            }
+
+
+
+        .loginform .logincontent form a {
+            color: #4FA66E;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .loginform .logincontent form button {
+            font-size: 1.6rem;
+            background-color: #38B6FF;
+            border-color: transparent;
+            padding: 1.5vh;
+            margin-bottom: 3vh;
+            margin-top: 3vh;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 4px;
+            width: 89%;
+        }
+
+        .loginform .logincontent form h3 {
+            margin-top: 3vh;
+            font-size: 0.8rem;
+            color: #756F6F;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            .loginform .logincontent form h3 a {
+                font-weight: 100;
+                border-bottom: 1px solid #4FA66E;
+            }
+
+
+.input-pas-icon {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    left: 2.9vh;
+}
+
+    .input-pas-icon #style-hide-btn {
+        position: relative;
+        right: 15%;
+        background-color: transparent;
+        width: min-content;
+        height: min-content;
+        color: black;
+        outline: transparent;
+    }
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+@media screen and (min-width: 426px) and (max-width: 767px) {
+    .loginform .logincontent {
+        padding: 3vh 4vh;
+        width: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+        .loginform .logincontent form {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .loginform .logincontent form input {
+                padding: 1.5vh;
+                margin-bottom: 3vh;
+                width: 37vh;
+            }
+
+                .loginform .logincontent form input::-moz-placeholder {
+                }
+
+                .loginform .logincontent form input::placeholder {
+                }
+
+
+
+            .loginform .logincontent form a {
+                font-size: 0.8rem;
+                font-weight: bold;
+                margin-top: 0vh;
+            }
+
+            .loginform .logincontent form button {
+                border-color: transparent;
+                padding: 1.5vh;
+                margin-bottom: 3vh;
+                margin-top: 3vh;
+                font-weight: bold;
+            }
+
+            .loginform .logincontent form h3 {
+                margin-top: 3vh;
+                font-size: 0.8rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+                .loginform .logincontent form h3 a {
+                    font-weight: 100;
+                }
+}
+
+
+
+
+@media screen and (min-width: 100px) and (max-width:425px) {
+
+    .loginform .logincontent {
+        width: 50vh;
+    }
+
+        .loginform .logincontent form input {
+            padding: 1vh;
+        }
+
+        .loginform .logincontent form button {
+            width: 83%;
+        }
+}

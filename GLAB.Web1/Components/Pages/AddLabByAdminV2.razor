@@ -1,0 +1,26 @@
+﻿@page "/Labs/CreateAdmin"
+@using GLAB.Web1.Components.Components.CreateLab;
+@using Microsoft.AspNetCore.Components.Forms
+
+<PageTitle>Create Labo By Admin</PageTitle>
+
+<div class="main-container">
+    <article class="content">
+        <main class="create-lab-section">
+            <div class="tabs">
+                <div class="tabs-categories">
+                    <button class="tab-btn-info">
+                        Information
+                    </button>
+                    <button class="tab-btn-teams">Teams</button>
+                </div>
+            </div>
+            <LaboratoryFields @rendermode="RenderMode.InteractiveServer" id="1" />
+        </main>
+
+    </article>
+</div>
+
+@code {
+
+}
